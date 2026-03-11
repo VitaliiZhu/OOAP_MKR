@@ -57,7 +57,6 @@ namespace OOAP_MKR
         {
             string ticket = txtTicketNumber.Text.Trim();
 
-            // Викликаємо метод сервісу, який всередині використовує делегування
             string result = _service.FindBaggageByTicket(ticket);
 
             MessageBox.Show(result, "Інформація про багаж");

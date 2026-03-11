@@ -12,14 +12,12 @@ namespace OOAP_MKR
 
         public void AddPassenger(Passenger p) => _passengers.Add(p);
 
-        // Патерн Delegation: Сервіс не формує рядок сам, 
-        // він делегує це методу GetBaggageInfo конкретного пасажира
         public string FindBaggageByTicket(string ticket)
         {
             var passenger = _passengers.FirstOrDefault(p => p.TicketNumber == ticket);
             if (passenger != null)
             {
-                return passenger.GetBaggageInfo(); // Делегування
+                return passenger.GetBaggageInfo();
             }
             return "Багаж за таким квитком не знайдено.";
         }
